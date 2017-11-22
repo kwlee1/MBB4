@@ -1,0 +1,10 @@
+<form (submit)="onSubmit()" #formData='ngForm'>
+  Name: <input type="text" name="name" 
+  required
+  minlength="3"
+  [(ngModel)]='user.name'
+  #name="ngModel">
+  <div class='error' *ngIf="!name.valid">Name must be at least 3 characters. </div><br>
+
+  <br><input [disabled]="formData.invalid" type="submit" value="Login">
+</form>

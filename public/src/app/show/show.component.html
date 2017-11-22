@@ -1,0 +1,22 @@
+<p><a [routerLink]="['/dashboard']">Go to Polls</a></p>
+<h1>{{this.question.query}}</h1>
+<p>Click the Vote button to choose one</p>
+<table>
+    <tr><th>Option</th><th>Current Count of Votes</th><th>Action</th></tr>
+    <tr><td>{{this.question.opt1}}</td><td>{{this.question.vote1}}</td>
+        <td><form (submit)="vote(1)">
+                <input type="submit" value="Vote">
+              </form></td></tr>
+    <tr><td>{{this.question.opt2}}</td><td>{{this.question.vote2}}</td>
+        <td><form (submit)="vote(2)">
+                <input type="submit" value="Vote">
+              </form></td></tr>
+    <tr><td>{{this.question.opt3}}</td><td>{{this.question.vote3}}</td>
+        <td><form (submit)="vote(3)">
+                <input type="submit" value="Vote">
+              </form></td></tr>
+    <tr><td>{{this.question.opt4}}</td><td>{{this.question.vote4}}</td>
+        <td><form (submit)="vote(4)">
+                <input type="submit" value="Vote">
+              </form></td></tr>
+</table>

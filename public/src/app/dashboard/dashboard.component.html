@@ -1,0 +1,16 @@
+<p><a [routerLink]="['/create']">Create a Poll</a></p>
+<p><a [routerLink]="['']">Logout</a></p>
+<h1>Current Polls</h1>
+<h3>{{this.user.name}}</h3>
+
+<table>
+  <tr><th>Name</th><th>Survey Question</th><th>Date Posted</th><th>Action</th></tr>
+  <tr *ngFor="let que of questions"><td> {{que.user}} </td>
+    <td><a [routerLink]="['/poll',que._id]">{{que.query}}</a></td>
+    <td>{{que.createdAt | date}}</td>
+    <td><div class="delete"
+      [ngClass]="{'hide': this.user.name!=que.user }"><form (submit)="onDelete(que._id)">
+        <input type="submit" value="Delete" class="delete">
+      </form></div></td>
+  </tr>  
+</table>

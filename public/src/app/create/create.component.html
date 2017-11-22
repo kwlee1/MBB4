@@ -1,0 +1,32 @@
+<p><a [routerLink]="['/dashboard']">Cancel</a></p>
+<h1>Put the question and options here:</h1>
+<form (submit)="onSubmit()" #formData='ngForm'>
+  Question: <input type="text" name="quequery" 
+  required
+  minlength="8"
+  [(ngModel)]='newQue.query'
+  #query="ngModel">
+  <div *ngIf="!query.valid">Question must be at least 8 characters. </div><br>
+  Option1: <input type="text" name="queopt1" 
+  required
+  minlength="3"
+  [(ngModel)]='newQue.opt1'
+  #opt1="ngModel"><br>
+  Option2: <input type="text" name="queopt2" 
+  required
+  minlength="3"
+  [(ngModel)]='newQue.opt2'
+  #opt2="ngModel"><br>
+  Option3: <input type="text" name="queopt3" 
+  required
+  minlength="3"
+  [(ngModel)]='newQue.opt3'
+  #opt3="ngModel"><br>
+  Option4: <input type="text" name="queopt4" 
+  required
+  minlength="3"
+  [(ngModel)]='newQue.opt4'
+  #opt4="ngModel"><br>
+  <div *ngIf="formData.invalid">All four options required. Each option must be at least three characters.  </div><br>
+  <br><input [disabled]="formData.invalid" type="submit" value="Create Poll">
+</form>
